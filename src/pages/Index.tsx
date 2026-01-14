@@ -24,6 +24,122 @@ interface Painting {
   emoji: string;
 }
 
+const generateCatPattern = (): ColorZone[] => {
+  const pattern = [
+    0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,
+    0,0,1,1,2,2,2,2,2,2,2,2,1,1,0,0,
+    0,1,1,2,2,3,2,2,2,2,3,2,2,1,1,0,
+    0,1,2,2,3,3,3,2,2,3,3,3,2,2,1,0,
+    1,1,2,2,2,3,2,2,2,2,3,2,2,2,1,1,
+    1,2,2,2,2,2,2,4,4,2,2,2,2,2,2,1,
+    1,2,2,2,2,4,4,4,4,4,4,2,2,2,2,1,
+    1,2,2,2,4,4,3,4,4,3,4,4,2,2,2,1,
+    1,2,2,2,4,4,4,4,4,4,4,4,2,2,2,1,
+    1,2,2,2,4,3,3,3,3,3,3,4,2,2,2,1,
+    1,2,2,2,4,4,4,5,5,4,4,4,2,2,2,1,
+    1,1,2,2,2,4,4,4,4,4,4,2,2,2,1,1,
+    0,1,2,2,2,2,2,2,2,2,2,2,2,2,1,0,
+    0,1,1,2,2,2,2,2,2,2,2,2,2,1,1,0,
+    0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,
+    0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0
+  ];
+  
+  const colors = ['#FFFFFF', '#8B4513', '#FFB366', '#2C1810', '#F4DCC3', '#FFD4A3'];
+  return pattern.map((num, idx) => ({
+    id: idx,
+    color: colors[num],
+    number: num + 1,
+    filled: false
+  }));
+};
+
+const generateTVPattern = (): ColorZone[] => {
+  const pattern = [
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,
+    0,1,1,2,2,2,2,2,2,2,2,2,2,1,1,0,
+    1,1,2,3,3,3,3,3,3,3,3,3,3,2,1,1,
+    1,2,2,3,4,4,4,4,4,4,4,4,3,2,2,1,
+    1,2,3,3,4,4,4,4,4,4,4,4,3,3,2,1,
+    1,2,3,4,4,5,5,5,5,5,5,4,4,3,2,1,
+    1,2,3,4,5,5,5,5,5,5,5,5,4,3,2,1,
+    1,2,3,4,5,5,5,5,5,5,5,5,4,3,2,1,
+    1,2,3,4,5,5,5,5,5,5,5,5,4,3,2,1,
+    1,2,3,4,4,5,5,5,5,5,5,4,4,3,2,1,
+    1,2,3,3,4,4,4,4,4,4,4,4,3,3,2,1,
+    1,2,2,3,3,3,3,3,3,3,3,3,3,2,2,1,
+    1,1,2,2,2,2,2,1,1,2,2,2,2,2,1,1,
+    0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,
+    0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0
+  ];
+  
+  const colors = ['#FFFFFF', '#1A1A1A', '#333333', '#555555', '#0A0A0A', '#4A90E2'];
+  return pattern.map((num, idx) => ({
+    id: idx,
+    color: colors[num],
+    number: num + 1,
+    filled: false
+  }));
+};
+
+const generateCameraPattern = (): ColorZone[] => {
+  const pattern = [
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,
+    0,0,0,0,1,1,2,2,2,2,1,1,0,0,0,0,
+    0,1,1,1,1,2,2,3,3,2,2,1,1,1,1,0,
+    1,1,2,2,2,2,2,3,3,2,2,2,2,2,1,1,
+    1,2,2,3,3,3,3,3,3,3,3,3,3,2,2,1,
+    1,2,3,3,4,4,4,4,4,4,4,4,3,3,2,1,
+    1,2,3,4,4,5,5,5,5,5,5,4,4,3,2,1,
+    1,2,3,4,5,5,6,6,6,6,5,5,4,3,2,1,
+    1,2,3,4,5,6,6,6,6,6,6,5,4,3,2,1,
+    1,2,3,4,5,5,6,6,6,6,5,5,4,3,2,1,
+    1,2,3,3,4,4,5,5,5,5,4,4,3,3,2,1,
+    1,2,2,3,3,3,4,4,4,4,3,3,3,2,2,1,
+    1,1,2,2,2,2,3,3,3,3,2,2,2,2,1,1,
+    0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,
+    0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0
+  ];
+  
+  const colors = ['#FFFFFF', '#2C3E50', '#34495E', '#E74C3C', '#95A5A6', '#BDC3C7', '#ECF0F1'];
+  return pattern.map((num, idx) => ({
+    id: idx,
+    color: colors[num],
+    number: num + 1,
+    filled: false
+  }));
+};
+
+const generateNotebookPattern = (): ColorZone[] => {
+  const pattern = [
+    0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,
+    0,1,1,2,2,2,2,2,2,2,2,2,2,1,1,0,
+    1,1,2,2,3,3,3,3,3,3,3,3,2,2,1,1,
+    1,2,2,3,3,4,4,4,4,4,4,3,3,2,2,1,
+    1,2,3,3,4,4,5,5,5,5,4,4,3,3,2,1,
+    1,2,3,4,4,5,5,6,6,5,5,4,4,3,2,1,
+    1,2,3,4,5,5,6,6,6,6,5,5,4,3,2,1,
+    1,2,3,4,5,6,6,7,7,6,6,5,4,3,2,1,
+    1,2,3,4,5,6,6,7,7,6,6,5,4,3,2,1,
+    1,2,3,4,5,5,6,6,6,6,5,5,4,3,2,1,
+    1,2,3,4,4,5,5,6,6,5,5,4,4,3,2,1,
+    1,2,3,3,4,4,5,5,5,5,4,4,3,3,2,1,
+    1,2,2,3,3,4,4,4,4,4,4,3,3,2,2,1,
+    1,1,2,2,3,3,3,3,3,3,3,3,2,2,1,1,
+    0,1,1,2,2,2,2,2,2,2,2,2,2,1,1,0,
+    0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0
+  ];
+  
+  const colors = ['#FFFFFF', '#FF6B9D', '#FFB3D1', '#FFD93D', '#FFF0B3', '#6BCB77', '#4D96FF', '#E8E8E8'];
+  return pattern.map((num, idx) => ({
+    id: idx,
+    color: colors[num],
+    number: num + 1,
+    filled: false
+  }));
+};
+
 const paintings: Painting[] = [
   {
     id: 1,
@@ -32,21 +148,14 @@ const paintings: Painting[] = [
     difficulty: 3,
     emoji: '🐱',
     colors: [
-      { number: 1, color: '#FF6B35', name: 'Оранжевый' },
-      { number: 2, color: '#FFD700', name: 'Жёлтый' },
-      { number: 3, color: '#8B4513', name: 'Коричневый' },
-      { number: 4, color: '#FFFFFF', name: 'Белый' },
+      { number: 1, color: '#FFFFFF', name: 'Белый' },
+      { number: 2, color: '#8B4513', name: 'Коричневый' },
+      { number: 3, color: '#FFB366', name: 'Персиковый' },
+      { number: 4, color: '#2C1810', name: 'Тёмно-коричневый' },
+      { number: 5, color: '#F4DCC3', name: 'Светло-бежевый' },
+      { number: 6, color: '#FFD4A3', name: 'Светло-оранжевый' },
     ],
-    zones: [
-      { id: 1, color: '#FF6B35', number: 1, filled: false },
-      { id: 2, color: '#FF6B35', number: 1, filled: false },
-      { id: 3, color: '#FFD700', number: 2, filled: false },
-      { id: 4, color: '#8B4513', number: 3, filled: false },
-      { id: 5, color: '#FFFFFF', number: 4, filled: false },
-      { id: 6, color: '#FF6B35', number: 1, filled: false },
-      { id: 7, color: '#FFD700', number: 2, filled: false },
-      { id: 8, color: '#8B4513', number: 3, filled: false },
-    ]
+    zones: generateCatPattern()
   },
   {
     id: 2,
@@ -55,18 +164,15 @@ const paintings: Painting[] = [
     difficulty: 2,
     emoji: '🎥',
     colors: [
-      { number: 1, color: '#2C3E50', name: 'Тёмно-синий' },
-      { number: 2, color: '#E74C3C', name: 'Красный' },
-      { number: 3, color: '#BDC3C7', name: 'Серый' },
+      { number: 1, color: '#FFFFFF', name: 'Белый' },
+      { number: 2, color: '#2C3E50', name: 'Тёмно-синий' },
+      { number: 3, color: '#34495E', name: 'Серый' },
+      { number: 4, color: '#E74C3C', name: 'Красный' },
+      { number: 5, color: '#95A5A6', name: 'Светло-серый' },
+      { number: 6, color: '#BDC3C7', name: 'Серебряный' },
+      { number: 7, color: '#ECF0F1', name: 'Почти белый' },
     ],
-    zones: [
-      { id: 1, color: '#2C3E50', number: 1, filled: false },
-      { id: 2, color: '#E74C3C', number: 2, filled: false },
-      { id: 3, color: '#BDC3C7', number: 3, filled: false },
-      { id: 4, color: '#2C3E50', number: 1, filled: false },
-      { id: 5, color: '#BDC3C7', number: 3, filled: false },
-      { id: 6, color: '#E74C3C', number: 2, filled: false },
-    ]
+    zones: generateCameraPattern()
   },
   {
     id: 3,
@@ -75,22 +181,14 @@ const paintings: Painting[] = [
     difficulty: 4,
     emoji: '📺',
     colors: [
-      { number: 1, color: '#1A1A1A', name: 'Чёрный' },
-      { number: 2, color: '#4A90E2', name: 'Синий' },
-      { number: 3, color: '#7F8C8D', name: 'Серебристый' },
-      { number: 4, color: '#E8E8E8', name: 'Светло-серый' },
+      { number: 1, color: '#FFFFFF', name: 'Белый' },
+      { number: 2, color: '#1A1A1A', name: 'Чёрный' },
+      { number: 3, color: '#333333', name: 'Тёмно-серый' },
+      { number: 4, color: '#555555', name: 'Серый' },
+      { number: 5, color: '#0A0A0A', name: 'Глубокий чёрный' },
+      { number: 6, color: '#4A90E2', name: 'Синий экран' },
     ],
-    zones: [
-      { id: 1, color: '#1A1A1A', number: 1, filled: false },
-      { id: 2, color: '#4A90E2', number: 2, filled: false },
-      { id: 3, color: '#7F8C8D', number: 3, filled: false },
-      { id: 4, color: '#E8E8E8', number: 4, filled: false },
-      { id: 5, color: '#1A1A1A', number: 1, filled: false },
-      { id: 6, color: '#4A90E2', number: 2, filled: false },
-      { id: 7, color: '#7F8C8D', number: 3, filled: false },
-      { id: 8, color: '#E8E8E8', number: 4, filled: false },
-      { id: 9, color: '#1A1A1A', number: 1, filled: false },
-    ]
+    zones: generateTVPattern()
   },
   {
     id: 4,
@@ -99,24 +197,16 @@ const paintings: Painting[] = [
     difficulty: 5,
     emoji: '📓',
     colors: [
-      { number: 1, color: '#FF6B9D', name: 'Розовый' },
-      { number: 2, color: '#FFFFFF', name: 'Белый' },
-      { number: 3, color: '#FFD93D', name: 'Жёлтый' },
-      { number: 4, color: '#6BCB77', name: 'Зелёный' },
-      { number: 5, color: '#4D96FF', name: 'Голубой' },
+      { number: 1, color: '#FFFFFF', name: 'Белый' },
+      { number: 2, color: '#FF6B9D', name: 'Розовый' },
+      { number: 3, color: '#FFB3D1', name: 'Светло-розовый' },
+      { number: 4, color: '#FFD93D', name: 'Жёлтый' },
+      { number: 5, color: '#FFF0B3', name: 'Светло-жёлтый' },
+      { number: 6, color: '#6BCB77', name: 'Зелёный' },
+      { number: 7, color: '#4D96FF', name: 'Голубой' },
+      { number: 8, color: '#E8E8E8', name: 'Светло-серый' },
     ],
-    zones: [
-      { id: 1, color: '#FF6B9D', number: 1, filled: false },
-      { id: 2, color: '#FFFFFF', number: 2, filled: false },
-      { id: 3, color: '#FFD93D', number: 3, filled: false },
-      { id: 4, color: '#6BCB77', number: 4, filled: false },
-      { id: 5, color: '#4D96FF', number: 5, filled: false },
-      { id: 6, color: '#FF6B9D', number: 1, filled: false },
-      { id: 7, color: '#FFFFFF', number: 2, filled: false },
-      { id: 8, color: '#FFD93D', number: 3, filled: false },
-      { id: 9, color: '#6BCB77', number: 4, filled: false },
-      { id: 10, color: '#4D96FF', number: 5, filled: false },
-    ]
+    zones: generateNotebookPattern()
   }
 ];
 
@@ -129,7 +219,6 @@ const categories = [
 ];
 
 export default function Index() {
-  const [selectedPainting, setSelectedPainting] = useState<Painting | null>(null);
   const [activePainting, setActivePainting] = useState<Painting | null>(null);
   const [selectedColor, setSelectedColor] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState('all');
@@ -181,123 +270,122 @@ export default function Index() {
     const progress = calculateProgress();
     
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-orange-50 to-blue-50 p-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-6">
-            <Button 
-              variant="outline" 
-              onClick={() => setActivePainting(null)}
-              className="hover-scale"
-            >
-              <Icon name="ArrowLeft" size={20} />
-              <span className="ml-2">Назад</span>
-            </Button>
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2 justify-center">
-                <span className="text-4xl">{activePainting.emoji}</span>
-                {activePainting.name}
-              </h2>
-              <div className="flex items-center gap-1 mt-1 justify-center">
-                {getDifficultyStars(activePainting.difficulty)}
-              </div>
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <div className="bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 p-2 flex items-center justify-between px-4">
+          <Button 
+            size="icon"
+            variant="ghost" 
+            onClick={() => setActivePainting(null)}
+            className="bg-white rounded-full hover:bg-gray-100"
+          >
+            <Icon name="ArrowLeft" size={24} className="text-gray-700" />
+          </Button>
+          
+          <div className="flex-1 mx-4 bg-white/30 backdrop-blur rounded-full h-8 flex items-center px-3 gap-2">
+            <Icon name="Palette" size={18} className="text-white" />
+            <div className="flex-1 bg-white/50 rounded-full h-4">
+              <div 
+                className="bg-gradient-to-r from-green-500 to-blue-500 h-full rounded-full transition-all duration-300"
+                style={{ width: `${progress}%` }}
+              />
             </div>
-            <Button 
-              variant="outline"
-              className="hover-scale"
-              onClick={() => startPainting(activePainting)}
-            >
-              <Icon name="RotateCcw" size={20} />
-            </Button>
+            <span className="text-white font-bold text-sm">{progress}%</span>
           </div>
+          
+          <Button 
+            size="icon"
+            variant="ghost"
+            className="bg-white rounded-full hover:bg-gray-100"
+            onClick={() => startPainting(activePainting)}
+          >
+            <Icon name="RotateCcw" size={20} className="text-gray-700" />
+          </Button>
+        </div>
 
-          <div className="mb-6">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-gray-700">Прогресс</span>
-              <span className="text-sm font-bold text-purple-600">{progress}%</span>
+        <div className="flex-1 flex flex-col items-center justify-center p-4 pb-32">
+          <div className="bg-white rounded-3xl shadow-2xl p-6 max-w-2xl w-full">
+            <div 
+              className="grid gap-0 border-4 border-gray-800 rounded-lg overflow-hidden"
+              style={{ 
+                gridTemplateColumns: 'repeat(16, 1fr)',
+                aspectRatio: '1/1'
+              }}
+            >
+              {activePainting.zones.map((zone) => (
+                <button
+                  key={zone.id}
+                  onClick={() => fillZone(zone.id)}
+                  className={`
+                    aspect-square border border-gray-200 transition-all duration-200 flex items-center justify-center
+                    ${zone.filled 
+                      ? 'hover:opacity-80' 
+                      : 'hover:bg-yellow-100 active:bg-yellow-200'
+                    }
+                    ${selectedColor === zone.number && !zone.filled ? 'ring-2 ring-inset ring-yellow-400' : ''}
+                  `}
+                  style={{
+                    backgroundColor: zone.filled ? zone.color : '#ffffff'
+                  }}
+                >
+                  {!zone.filled && (
+                    <span className="text-[10px] font-bold text-gray-600">
+                      {zone.number}
+                    </span>
+                  )}
+                </button>
+              ))}
             </div>
-            <Progress value={progress} className="h-3" />
           </div>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="md:col-span-2">
-              <Card className="p-6 bg-white shadow-xl">
-                <div className="grid grid-cols-4 gap-3">
-                  {activePainting.zones.map((zone) => (
-                    <button
-                      key={zone.id}
-                      onClick={() => fillZone(zone.id)}
-                      className={`
-                        aspect-square rounded-xl border-4 transition-all duration-300
-                        ${zone.filled 
-                          ? 'border-green-400 hover:scale-105' 
-                          : 'border-gray-300 hover:border-purple-400 hover-scale'
-                        }
-                        ${selectedColor === zone.number && !zone.filled ? 'ring-4 ring-purple-400' : ''}
-                      `}
-                      style={{
-                        backgroundColor: zone.filled ? zone.color : '#ffffff'
-                      }}
-                    >
-                      {!zone.filled && (
-                        <span className="text-2xl font-bold text-gray-700">
-                          {zone.number}
-                        </span>
-                      )}
-                    </button>
-                  ))}
-                </div>
-              </Card>
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t-4 border-gray-200 shadow-lg p-4">
+          {progress === 100 ? (
+            <div className="max-w-2xl mx-auto text-center py-4">
+              <Icon name="Trophy" size={48} className="text-yellow-500 mx-auto mb-2" />
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Отлично! Картина готова!</h3>
+              <Button className="w-full max-w-md bg-gradient-to-r from-purple-600 to-pink-600 text-lg py-6">
+                <Icon name="Share2" size={20} />
+                <span className="ml-2">Поделиться результатом</span>
+              </Button>
             </div>
-
-            <div>
-              <Card className="p-6 bg-white shadow-xl">
-                <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-                  <Icon name="Palette" size={24} className="text-purple-600" />
-                  Палитра
-                </h3>
-                <div className="space-y-3">
-                  {activePainting.colors.map((color) => (
+          ) : (
+            <div className="max-w-2xl mx-auto">
+              <div className="flex gap-2 overflow-x-auto pb-2">
+                {activePainting.colors.map((color) => {
+                  const remaining = activePainting.zones.filter(z => z.number === color.number && !z.filled).length;
+                  
+                  return (
                     <button
                       key={color.number}
                       onClick={() => setSelectedColor(color.number)}
                       className={`
-                        w-full p-4 rounded-xl border-3 transition-all duration-200
-                        flex items-center gap-3 hover-scale
+                        flex-shrink-0 relative transition-all duration-200
                         ${selectedColor === color.number 
-                          ? 'border-purple-600 ring-4 ring-purple-200 scale-105' 
-                          : 'border-gray-200 hover:border-purple-300'
+                          ? 'scale-110 ring-4 ring-green-400' 
+                          : 'hover:scale-105'
                         }
+                        ${remaining === 0 ? 'opacity-40' : ''}
                       `}
                     >
                       <div 
-                        className="w-12 h-12 rounded-lg border-2 border-gray-300"
+                        className="w-16 h-16 rounded-2xl border-4 border-gray-300 shadow-lg flex items-center justify-center relative"
                         style={{ backgroundColor: color.color }}
-                      />
-                      <div className="text-left flex-1">
-                        <div className="font-bold text-gray-800">{color.number}</div>
-                        <div className="text-sm text-gray-600">{color.name}</div>
+                      >
+                        <span className="text-2xl font-black text-gray-700 drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]">
+                          {color.number}
+                        </span>
+                        {remaining > 0 && (
+                          <div className="absolute -top-2 -right-2 bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold border-2 border-white">
+                            {remaining}
+                          </div>
+                        )}
                       </div>
-                      {selectedColor === color.number && (
-                        <Icon name="Check" size={24} className="text-purple-600" />
-                      )}
                     </button>
-                  ))}
-                </div>
-
-                {progress === 100 && (
-                  <div className="mt-6 p-4 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl text-center animate-scale-in">
-                    <Icon name="Trophy" size={48} className="text-yellow-500 mx-auto mb-2" />
-                    <h4 className="font-bold text-lg text-gray-800">Поздравляем!</h4>
-                    <p className="text-sm text-gray-600 mb-4">Картина завершена</p>
-                    <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600">
-                      <Icon name="Share2" size={18} />
-                      <span className="ml-2">Поделиться</span>
-                    </Button>
-                  </div>
-                )}
-              </Card>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     );
@@ -313,8 +401,8 @@ export default function Index() {
                 🎨
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-800">ColorByNum</h1>
-                <p className="text-xs text-gray-600">Раскрашивай по номерам</p>
+                <h1 className="text-2xl font-bold text-gray-800">Pixel Paint</h1>
+                <p className="text-xs text-gray-600">Раскрашивай пиксель-арт по номерам</p>
               </div>
             </div>
             
@@ -343,13 +431,13 @@ export default function Index() {
       <main className="max-w-7xl mx-auto px-4 py-8">
         <section className="mb-12 text-center animate-fade-in">
           <h2 className="text-5xl font-bold text-gray-800 mb-4">
-            Создавай шедевры
+            Создавай пиксель-арт
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600">
               по номерам
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Выбери картину, раскрась по номерам и поделись результатом с друзьями
+            16×16 пикселей настоящего искусства! Раскрась и поделись с друзьями
           </p>
         </section>
 
@@ -398,20 +486,34 @@ export default function Index() {
               style={{ animationDelay: `${index * 100}ms` }}
               onClick={() => startPainting(painting)}
             >
-              <div className="aspect-square bg-gradient-to-br from-purple-100 via-pink-100 to-orange-100 flex items-center justify-center text-8xl">
-                {painting.emoji}
+              <div className="aspect-square bg-gradient-to-br from-purple-100 via-pink-100 to-orange-100 flex items-center justify-center p-8">
+                <div 
+                  className="grid gap-0 w-full h-full border-2 border-gray-300 rounded-lg overflow-hidden"
+                  style={{ gridTemplateColumns: 'repeat(16, 1fr)' }}
+                >
+                  {painting.zones.map((zone, idx) => (
+                    <div
+                      key={idx}
+                      className="aspect-square"
+                      style={{ backgroundColor: zone.color }}
+                    />
+                  ))}
+                </div>
               </div>
               <div className="p-4">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-bold text-gray-800">{painting.name}</h3>
+                  <h3 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                    <span className="text-2xl">{painting.emoji}</span>
+                    {painting.name}
+                  </h3>
                   <Badge variant="secondary" className="text-xs">
-                    {painting.colors.length} цветов
+                    16×16
                   </Badge>
                 </div>
                 <div className="flex items-center gap-1 mb-3">
                   {getDifficultyStars(painting.difficulty)}
                   <span className="text-xs text-gray-600 ml-2">
-                    Сложность {painting.difficulty}/5
+                    {painting.colors.length} цветов
                   </span>
                 </div>
                 <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
@@ -437,7 +539,7 @@ export default function Index() {
             <div>
               <h4 className="font-bold text-gray-800 mb-4">О платформе</h4>
               <p className="text-sm text-gray-600">
-                ColorByNum — творческая платформа для раскрашивания картин по номерам
+                Pixel Paint — пиксель-арт платформа для раскрашивания по номерам
               </p>
             </div>
             <div>
@@ -471,7 +573,7 @@ export default function Index() {
           </div>
           <Separator className="mb-6" />
           <div className="text-center text-sm text-gray-600">
-            © 2026 ColorByNum. Все права защищены.
+            © 2026 Pixel Paint. Все права защищены.
           </div>
         </div>
       </footer>
